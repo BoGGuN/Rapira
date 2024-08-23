@@ -11,7 +11,7 @@ const props = defineProps<Post>()
 
 <template>
    <div
-      class="flex h-[408px] w-[400px] flex-col gap-2.5"
+      class="flex flex-col gap-2.5 sm:h-[383px] sm:w-[325px] md:h-[378px] md:w-[365px] lg:h-[408px] lg:w-[400px]"
       @click="emits('redirect', props)"
    >
       <SearchPostPicture

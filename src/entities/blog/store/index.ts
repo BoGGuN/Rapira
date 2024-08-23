@@ -50,14 +50,17 @@ export const useBlogStore = defineStore('blog-store', () => {
       isLoading.value = false
    }
 
+   function clearParams() {
+      params.value.term = ''
+      params.value.tags = []
+   }
+
    function reset() {
       error.value = null
       isLoading.value = false
       items.value = []
-      params.value = {
-         term: '',
-         tags: [],
-      }
+      params.value.term = ''
+      params.value.tags = []
    }
    return {
       error,
@@ -65,6 +68,7 @@ export const useBlogStore = defineStore('blog-store', () => {
       items,
       params,
       getAll,
+      clearParams,
       reset,
    }
 })

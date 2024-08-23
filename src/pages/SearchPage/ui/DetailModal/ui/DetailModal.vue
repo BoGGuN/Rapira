@@ -20,10 +20,14 @@ const post = computed(() => props.post)
       content-transition="vfm-fade"
       class="flex items-center justify-center"
    >
-      <div class="max-h-[867px] w-[630px] rounded-[12px] bg-white py-[15px]">
+      <div
+         class="max-h-[867px] rounded-[12px] bg-white py-[15px] sm:w-[350px] md:w-[630px]"
+      >
          <div class="mb-2.5 flex flex-col gap-2.5 px-[15px]">
             <div class="flex items-center justify-between">
-               <span class="text-[24px] font-semibold leading-none">
+               <span
+                  class="font-semibold leading-none sm:text-[20px] md:text-[24px]"
+               >
                   Вдохновение в каждом шаге
                </span>
                <ElButton
@@ -46,7 +50,7 @@ const post = computed(() => props.post)
                <ElImage
                   :src="post?.picture"
                   fit="cover"
-                  class="h-[343px] w-[600px] rounded-[12px]"
+                  class="rounded-[12px] sm:h-[200px] sm:w-[320px] md:h-[343px] md:w-[600px]"
                >
                   <template #error>
                      <div
@@ -59,14 +63,16 @@ const post = computed(() => props.post)
                      </div>
                   </template>
                </ElImage>
-               <span class="overflow-hidden whitespace-pre text-wrap">
+               <span
+                  class="overflow-hidden whitespace-pre text-wrap sm:text-[14px]/[20px] md:text-[16px]/[25px]"
+               >
                   {{ post.post_text }}
                </span>
                <SearchPostTags :tags="post?.tags" />
                <div class="flex flex-col gap-2.5">
                   <div class="flex items-end gap-1">
                      <span
-                        class="text-text_dark_gray text-[16px] font-semibold leading-none"
+                        class="text-[16px] font-semibold leading-none text-text_dark_gray"
                      >
                         Комментариев
                      </span>

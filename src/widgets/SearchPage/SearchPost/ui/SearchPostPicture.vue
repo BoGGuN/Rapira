@@ -9,7 +9,7 @@ const isError = ref<HTMLDivElement | null>(null)
 </script>
 
 <template>
-   <div class="group relative h-[250px] w-[400px]">
+   <div class="group relative">
       <div
          v-if="!isError"
          class="segment absolute right-0 top-0 z-[2] flex cursor-pointer justify-end bg-[#000000A0] p-[10px_10px_0_0] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
@@ -22,7 +22,7 @@ const isError = ref<HTMLDivElement | null>(null)
       <ElImage
          :src="props.picture"
          fit="cover"
-         class="h-[250px] w-[400px] rounded-[12px]"
+         class="rounded-[12px] sm:h-[200px] sm:w-[325px] md:h-[220px] md:w-[365px] lg:h-[250px] lg:w-[400px]"
       >
          <template #error>
             <div

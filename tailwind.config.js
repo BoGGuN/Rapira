@@ -3,12 +3,12 @@ export default {
    content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
    theme: {
       screens: {
-         sm: '355px',
-         // => @media (min-width: 640px) { ... }
-         md: '780px',
-         // => @media (min-width: 1024px) { ... }
-         lg: '1300px',
-         // => @media (min-width: 1280px) { ... }
+         sm: '375px',
+         // => @media (min-width: 375px) { ... }
+         md: '800px',
+         // => @media (min-width: 800px) { ... }
+         lg: '1400px',
+         // => @media (min-width: 1400px) { ... }
       },
       extend: {
          colors: {
@@ -18,6 +18,8 @@ export default {
             text_primary_tag: '#2884ef',
             text_dark_gray: '#181C32',
             text_danger: '#F1416C',
+            primary_tag: '#3E97FF',
+            primary_tag_hover: '#3E97FF33',
          },
       },
    },

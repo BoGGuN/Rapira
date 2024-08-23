@@ -1,6 +1,6 @@
 import { SearchPostPicture, SearchPostTags, SearchPost } from './SearchPost'
 import SearchPageNoContentDisplay from './SearchPageNoContentDisplay'
-import { DetailComment, DetailInput } from './DetailModal.vue'
+import { DetailComment, DetailInput } from './DetailModal'
 import FilterTag from './FilterTag'
 import {
    SearchMainHeader,

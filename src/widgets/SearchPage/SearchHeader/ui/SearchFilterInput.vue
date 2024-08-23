@@ -1,38 +1,51 @@
 <script setup lang="ts">
 import SearchIcon from '@/assets/icons/SearchIcon.vue'
+import { useBlogStore } from '@/entities/blog'
 
 const modelValue = defineModel<string>()
 
 const emits = defineEmits(['toggleTags'])
 const props = defineProps<{ showTags: boolean }>()
 
-const toggleTagsLabel = computed(() =>
-   props.showTags ? 'Скрыть фильтры' : 'Фильтры',
+const blogStore = useBlogStore()
+const canClear = computed(
+   () => blogStore.params.tags.length || blogStore.params.term,
 )
 </script>
 
 <template>
-   <div class="flex justify-between">
-      <div class="flex items-center gap-[40px]">
+   <div class="relative flex justify-between">
+      <div
+         class="flex gap-[40px] sm:w-full sm:flex-col sm:items-start md:flex-row md:items-center"
+      >
          <span class="text-[32px] font-bold leading-none">Блог</span>
          <ElInput
             v-model="modelValue"
             :prefix-icon="SearchIcon"
             size="large"
-            class="!w-[400px]"
+            class="sm:!w-full md:!w-[400px]"
          />
       </div>
       <div
-         class="flex cursor-pointer items-center justify-center gap-1"
-         @click="emits('toggleTags', !props.showTags)"
+         class="flex items-center gap-2.5 sm:absolute sm:right-0 sm:top-[10px] md:static"
       >
-         <span class="leading-none text-text_light_gray">
-            {{ toggleTagsLabel }}
+         <span
+            v-if="canClear"
+            class="cursor-pointer select-none text-[14px] leading-none text-text_primary_tag md:hidden lg:inline"
+            @click="blogStore.clearParams"
+         >
+            Очистить
          </span>
-         <ElIcon size="16" color="#A1A5B7">
-            <ArrowDown v-if="!props.showTags" />
-            <ArrowUp v-else />
-         </ElIcon>
+         <div
+            class="flex cursor-pointer select-none items-center justify-center gap-1 text-[14px]"
+            @click="emits('toggleTags', !props.showTags)"
+         >
+            <span class="leading-none text-text_light_gray"> Фильтры </span>
+            <ElIcon size="16" color="#A1A5B7">
+               <ArrowDown v-if="!props.showTags" />
+               <ArrowUp v-else />
+            </ElIcon>
+         </div>
       </div>
    </div>
 </template>

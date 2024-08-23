@@ -13,7 +13,7 @@ function handleChangeTag(tag: string) {
 </script>
 
 <template>
-   <div class="flex gap-2">
+   <div class="flex flex-wrap gap-2">
       <FilterTag
          v-for="tag in TAGS"
          :key="tag"

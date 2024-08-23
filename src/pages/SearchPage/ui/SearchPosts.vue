@@ -47,14 +47,14 @@ onMounted(async () => {
 </script>
 
 <template>
-   <ElScrollbar class="size-full" wrap-class="py-[30px]">
+   <ElScrollbar class="size-full" wrap-class="pt-[10px] lg:pt-[20px] pb-[30px]">
       <div class="flex size-full justify-center">
          <div
-            class="sm::w-[355px] h-fit rounded-[12px] bg-white p-[30px] md:w-[780px] lg:w-[1300px]"
+            class="sm::w-[355px] h-fit rounded-[12px] bg-white p-[15px] md:w-[780px] lg:w-[1300px] lg:p-[30px]"
          >
             <div
                v-loading="isLoadingWithData"
-               class="grid gap-x-[20px] gap-y-[40px] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+               class="grid gap-x-[20px] sm:grid-cols-1 sm:gap-y-[20px] md:grid-cols-2 md:gap-y-[25px] lg:grid-cols-3 lg:gap-y-[40px]"
             >
                <SearchPost
                   v-for="item in items"

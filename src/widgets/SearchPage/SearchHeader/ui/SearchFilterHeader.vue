@@ -23,7 +23,7 @@ watch(params.value, () => {
 
 <template>
    <div
-      class="z-[3] h-min max-h-[152px] min-h-[80px] w-full bg-white px-[95px] py-[20px]"
+      class="z-[3] h-min min-h-[80px] w-full bg-white py-[20px] sm:px-[10px] md:px-[30px] lg:px-[95px]"
    >
       <SearchFilterInput
          v-model="params.term"

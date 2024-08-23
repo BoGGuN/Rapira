@@ -13,7 +13,7 @@ const props = defineProps<{
       size="large"
       round
       :effect="props.isSelected ? 'dark' : 'light'"
-      class="cursor-pointer select-none"
+      class="cursor-pointer select-none hover:!bg-primary_tag_hover sm:!h-[28px] md:!h-[32px]"
    >
       <div class="flex items-center gap-[6px]">
          <span class="text-[16px] font-medium">
