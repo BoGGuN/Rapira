@@ -9,11 +9,6 @@ const router = createRouter({
          name: ROUTE_NAMES.SEARCH,
          component: () => import('@/pages/SearchPage'),
       },
-      {
-         path: '/detail/:id/',
-         name: ROUTE_NAMES.DETAIL,
-         component: () => import('@/pages/Detail'),
-      },
    ],
 })
 
