@@ -24,7 +24,7 @@ export default defineConfig({
                '@vueuse/head': ['useHead'],
             },
          ],
-         dts: 'src/auto-imports.d.ts',
+         dts: './auto-imports.d.ts',
          eslintrc: {
             enabled: true,
          },
@@ -34,7 +34,7 @@ export default defineConfig({
          include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
          directives: true,
          resolvers: [ElementPlusResolver()],
-         dts: 'src/components.d.ts',
+         dts: './components.d.ts',
       }),
    ],
    resolve: {
