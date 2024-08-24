@@ -9,7 +9,7 @@ const isError = ref<HTMLDivElement | null>(null)
 </script>
 
 <template>
-   <div class="group relative">
+   <div class="relative">
       <div
          v-if="!isError"
          class="segment absolute right-0 top-0 z-[2] flex cursor-pointer justify-end bg-[#000000A0] p-[10px_10px_0_0] opacity-0 transition-opacity duration-500 group-hover:opacity-100"

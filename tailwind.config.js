@@ -19,7 +19,6 @@ export default {
             text_dark_gray: '#181C32',
             text_danger: '#F1416C',
             primary_tag: '#3E97FF',
-            primary_tag_hover: '#3E97FF33',
          },
       },
    },
