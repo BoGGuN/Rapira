@@ -29,23 +29,28 @@ const canClear = computed(
       <div
          class="flex items-center gap-2.5 sm:absolute sm:right-0 sm:top-[10px] md:static"
       >
-         <span
+         <ElButton
             v-if="canClear"
-            class="cursor-pointer select-none text-[14px] leading-none text-text_primary_tag md:hidden lg:inline"
+            type="primary"
+            class="!px-1"
+            text
             @click="blogStore.clearParams"
          >
             Очистить
-         </span>
-         <div
-            class="flex cursor-pointer select-none items-center justify-center gap-1 text-[14px]"
+         </ElButton>
+         <ElButton
+            class="!px-1"
+            text
             @click="emits('toggleTags', !props.showTags)"
          >
-            <span class="leading-none text-text_light_gray"> Фильтры </span>
-            <ElIcon size="16" color="#A1A5B7">
-               <ArrowDown v-if="!props.showTags" />
-               <ArrowUp v-else />
-            </ElIcon>
-         </div>
+            <div class="flex items-center gap-1">
+               <span class="text-[14px] leading-none">Фильтры</span>
+               <ElIcon size="16" color="#A1A5B7">
+                  <ArrowDown v-if="!props.showTags" />
+                  <ArrowUp v-else />
+               </ElIcon>
+            </div>
+         </ElButton>
       </div>
    </div>
 </template>
